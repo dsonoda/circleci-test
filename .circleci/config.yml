@@ -23,7 +23,10 @@ jobs:
       - checkout
       - run:
           name: gemのインストール
-          command: bundle install
+          command: |
+            sudo gem update --system
+            sudo gem install bundler -v 2.1.4
+            bundle install
       - run:
           name: データベースの起動を待機
           command: |
