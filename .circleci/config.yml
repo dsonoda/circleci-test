@@ -25,7 +25,7 @@ jobs:
           name: gemのインストール
           command: |
             sudo gem update --system \
-            gem install bundler -v '2.1.4' \
+            gem install bundler -v 2.1.4 \
             bundle install
       - run:
           name: データベースの起動を待機
