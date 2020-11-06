@@ -25,7 +25,7 @@ jobs:
           command: |
             sudo gem update --system
             sudo gem install bundler
-            sudo bundle install
+            bundle install
       - run:
           name: データベースの起動を待機
           command: |
