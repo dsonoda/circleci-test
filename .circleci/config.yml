@@ -5,12 +5,11 @@ executors:
         environment:
           DB_HOST: 127.0.0.1
           RAILS_ENV: test
-          BUNDLER_VERSION: 2.1.4
       - image: circleci/mysql:8.0.18-ram
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_ROOT_PASSWORD: ""
-          MYSQL_DATABASE: "test_db"
+          MYSQL_DATABASE: <テストデータベース名>
         # MySQL 8.0.4移行の認証プラグインを変更する
         command: mysqld --default-authentication-plugin=mysql_native_password
     working_directory: ~/repo
@@ -23,10 +22,7 @@ jobs:
       - checkout
       - run:
           name: gemのインストール
-          command: |
-            sudo gem update --system
-            sudo gem install bundler -v 2.1.4
-            bundle install
+          command: bundle install
       - run:
           name: データベースの起動を待機
           command: |
