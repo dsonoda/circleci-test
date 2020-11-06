@@ -25,7 +25,7 @@ jobs:
           name: gemのインストール
           command: |
             sudo gem update --system
-            bundle install
+            sudo bundle install
       - run:
           name: データベースの起動を待機
           command: |
