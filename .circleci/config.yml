@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run:
           name: gemのインストール
-          command: bundle install
+          command: bundle check || bundle install
       - run:
           name: データベースの起動を待機
           command: |
