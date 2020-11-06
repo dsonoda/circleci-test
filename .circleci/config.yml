@@ -1,7 +1,7 @@
 executors:
   default:
     docker:
-      - image: cimg:node:lts
+      - image: cimg/node:lts
     working_directory: ~/repo
 
 version: 2.1
